@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Request Headers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4 max-w-2xl">
+        <h1 class="text-4xl font-bold mb-8 text-center">Request Headers</h1>
+        <div id="headers-container" class="bg-white shadow-md rounded-lg p-4">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Header
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Value
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="headers-body" class="bg-white divide-y divide-gray-200">
+                    <!-- Headers will be injected here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="/static/debug.js"></script>
+</body>
+</html>

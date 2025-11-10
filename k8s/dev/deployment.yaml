@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apriporta
+  labels:
+    app: apriporta
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apriporta
+  template:
+    metadata:
+      labels:
+        app: apriporta
+    spec:
+      containers:
+      - name: apriporta
+        image: apriporta
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: config-volume
+          mountPath: /code/config.toml
+          subPath: config.toml
+      volumes:
+      - name: config-volume
+        secret:
+          secretName: config

@@ -1,0 +1,27 @@
+apiVersion: skaffold/v4beta1
+kind: Config
+metadata:
+  name: apriporta
+build:
+  artifacts:
+  - image: apriporta
+    docker:
+      dockerfile: Dockerfile
+manifests:
+  rawYaml:
+  - k8s/service.yaml
+profiles:
+  - name: dev
+    manifests:
+      kustomize:
+        paths:
+          - k8s/dev
+  - name: prod
+    deploy:
+      cloudrun: {}
+portForward:
+- resourceType: deployment
+  resourceName: apriporta
+  port: 8080
+  address: 0.0.0.0
+  localPort: 8080

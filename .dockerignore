@@ -1,0 +1,17 @@
+.dockerignore
+Dockerfile
+.git
+.gitignore
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+.pytest_cache
+.env
+venv
+.idea
+*.iml
+*.DS_Store
+README.md
+GEMINI.md
+.gemini
